@@ -1,0 +1,60 @@
+<div class="container">
+<div class="row">
+    <div class="col-md-12">
+      <h1>Login</h1>
+      
+      <br>
+        <nb-card-full>
+            <nb-card class="large" >
+            
+              <nb-card-body> 
+
+                  <div class="row">
+                      <div class="col-md-12" align="center">
+                          <div class="col-md-6">
+        <form aria-labelledby="title" class="ng-pristine ng-touched ng-invalid">
+          <div class="form-control-group">
+            <label class="label" for="input-email">
+              <span class="text-align">
+                  Email:
+              </span>
+            </label>
+            <input autofocus="" fullwidth="" [(ngModel)]="authData.username" [ngModelOptions]="{standalone: true}" id="input-email" name="email" nbinput="" placeholder="Email address" class="input-full-width input-md input-rectangle ng-pristine ng-touched ng-invalid" aria-invalid="true">
+            <!----><!----><!---->
+            
+               
+          </div>
+          <br>
+               <div class="form-control-group">
+                 <label class="label" for="input-password">
+                   Senha:
+                  </label>
+                  <input fullwidth="" [(ngModel)]="authData.password" [ngModelOptions]="{standalone: true}" id="input-password" name="password" nbinput="" placeholder="Password" type="password" class="input-full-width input-md input-rectangle ng-untouched ng-pristine ng-invalid">
+                  <!---->
+                </div>
+                  <div class="form-control-group accept-group">
+                    
+                  </div>
+                  <br>
+              
+                <button nbbutton="" status="success" class="btn-success btn-full-width" tabindex="-1" (click)="login()"> 
+                  Entrar 
+                </button>
+                    </form>
+                    </div>
+                      </div>
+                  </div>
+      </nb-card-body>
+            
+    </nb-card>
+    
+  </nb-card-full>
+  <div class="row">
+      <div class= col-md-12 style="text-align: center">
+          <img src="../../../assets/img/logo_branca@4x.png" width="150">
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
