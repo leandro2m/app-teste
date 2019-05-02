@@ -19,13 +19,13 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit() {
     if (this.authService.checkAuth()) {
-      this.router.navigateByUrl('home');
+      this.router.navigateByUrl('dashboard');
     }
   }
 
   login() {
       this.authService.login(this.authData).then(response => {
-        this.router.navigateByUrl('home');
+        this.router.navigateByUrl('dashboard');
       });
   }
 

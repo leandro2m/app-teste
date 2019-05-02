@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "app-teste": {
+    "app-new-patio": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/app-teste",
+            "outputPath": "dist/app-new-patio",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -39,7 +39,10 @@
               "node_modules/@nebular/bootstrap/styles/prebuilt/corporate.css",
               "src/app/@theme/styles/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/echarts/dist/echarts.min.js",
+              "node_modules/echarts/dist/extension/bmap.min.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -62,8 +65,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "6mb",
+                  "maximumError": "7mb"
                 }
               ]
             }
@@ -72,18 +75,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app-teste:build"
+            "browserTarget": "app-new-patio:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "app-teste:build:production"
+              "browserTarget": "app-new-patio:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app-teste:build"
+            "browserTarget": "app-new-patio:build"
           }
         },
         "test": {
@@ -127,7 +130,7 @@
         }
       }
     },
-    "app-teste-e2e": {
+    "app-new-patio-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -136,11 +139,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "app-teste:serve"
+            "devServerTarget": "app-new-patio:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "app-teste:serve:production"
+              "devServerTarget": "app-new-patio:serve:production"
             }
           }
         },
@@ -156,5 +159,5 @@
       }
     }
   },
-  "defaultProject": "app-teste"
+  "defaultProject": "app-new-patio"
 }

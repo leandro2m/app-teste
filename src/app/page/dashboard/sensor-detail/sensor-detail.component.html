@@ -1,0 +1,102 @@
+<div class="row" *ngIf="deviceName">
+  
+    <div class="col-sm-6">
+  <h1 style="text-align: left">{{deviceName}}</h1>
+
+  
+    </div>
+    <div class="col-sm-6">
+        <div class="chart-header">
+                  
+            <div class="dropdown"
+            [ngClass]="{ 'ghost-dropdown': currentTheme === 'corporate' }"
+            ngbDropdown>
+         <button type="button" ngbDropdownToggle class="btn"
+                 [ngClass]="{ 'btn-outline-success': currentTheme == 'default', 'btn-primary': currentTheme != 'default'}">
+                 Período Selecionado: {{selected_period}}
+         </button>
+         <ul class="dropdown-menu" ngbDropdownMenu> 
+           <li class="dropdown-item" *ngFor="let t of types" (click)="onChangePeriod(t)">{{ t }}</li>
+         </ul>
+       </div>
+
+          </div>
+    </div>
+
+    <div class="col-md-12">
+      <nb-card>
+
+          <nb-card-header>Status do Reservatório</nb-card-header>
+          <nb-card-body>
+              <div class="row">
+                <div class="col-md-12" *ngIf="waterlevel">
+                  <div>
+                  <span class="badge {{reservMsgCss}}">{{reservMsg}}</span>
+                </div>
+                </div>
+                
+                <div class="col-md-12" *ngIf="internetResilience >= 0.25">
+                <span class="badge badge-danger"> Verifique conectividade de rede e internet do sensor </span>
+  
+                  </div>
+              </div>
+            </nb-card-body>
+        </nb-card>
+      </div>
+      
+</div>
+
+<div class="row">
+
+    <div class="col-md-6" >
+      <nb-card>
+          
+          <div> 
+
+              <nb-card-header>Leituras no período
+              
+                  
+              </nb-card-header>
+  
+                
+            </div>
+              
+
+
+
+        <div echarts [options]="chartWaterlevelOptions" class="echart"></div>
+      </nb-card>  
+    </div>
+
+    <div class="col-md-6">
+        <nb-card>
+            <nb-card-header>Disponibilidade do Sensor
+
+
+
+            </nb-card-header>
+          <div echarts [options]="chartInternetOptions" class="echart"></div>
+        </nb-card>  
+      </div>
+
+ 
+         
+    
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+      <nb-card>
+        <nb-card-header>Nível</nb-card-header>
+        <div echarts [options]="options" class="echart"></div>
+      </nb-card>
+    </div>
+</div>
+
+<div class="row">
+
+<div class="col-sm-6 col-md-4" *ngIf="sysHumi">
+    <ngx-solar [chartValue]="sysHumi"></ngx-solar>
+</div>
+</div>
+

@@ -10,6 +10,7 @@ import { NbThemeModule, NbLayoutModule, NbSidebarService, NbBadgeModule } from '
 import { HomePageComponent } from './page/home-page/home-page.component';
 import { LoginPageComponent } from './page/login-page/login-page.component';
 import { DashboardModule } from './page/dashboard/dashboard.module';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { DashboardModule } from './page/dashboard/dashboard.module';
     NbLayoutModule,
     FormsModule,
     DashboardModule,
-    NbBadgeModule
+    NbBadgeModule,
+    NgxEchartsModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [NbSidebarService],

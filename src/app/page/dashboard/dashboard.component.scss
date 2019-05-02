@@ -3,6 +3,8 @@
 @import '~bootstrap/scss/mixins/breakpoints';
 $ionicons-font-path: "~ionicons/dist/fonts";
 @import "~ionicons/dist/scss/ionicons.scss";
+@import '~@nebular/bootstrap/styles/hero-buttons';
+
 
 @include nb-install-component() {
   

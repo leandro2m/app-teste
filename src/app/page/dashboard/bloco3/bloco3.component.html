@@ -1,0 +1,25 @@
+<div class="row text-center" *ngIf="data">
+  <div class="col-md-12">
+    <span class="badge badge-success" style="float: right" >Conectado</span>
+
+          <span class={{cssTankAlert}} style="float: right"> {{ alertWaterTank }}
+            </span> 
+
+       
+              <fusioncharts
+              width="150"
+              height="200"
+              type="cylinder"
+              dataFormat="json"
+              [dataSource]="data" >
+            </fusioncharts>
+
+
+      <button class="btn btn-sm btn-hero-info btn-demo" (click)="goToDeviceDetail()" style="float:right" > Detalhes</button>
+
+
+
+  </div>
+
+
+</div>

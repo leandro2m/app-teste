@@ -3,11 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomePageComponent } from './page/home-page/home-page.component';
 import { LoginPageComponent } from './page/login-page/login-page.component';
 import { DashboardComponent } from './page/dashboard/dashboard.component';
+import { SensorDetailComponent } from './page/dashboard/sensor-detail/sensor-detail.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'dashboard',
     pathMatch: 'full'
   },
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent
+  },
+  {
+    path: 'sensor/:id',
+    component: SensorDetailComponent
   },
 ];
 
